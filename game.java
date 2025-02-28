@@ -40,8 +40,12 @@ public class game{
                 int guess = scanner.nextInt();
 
             if (guess == randomNumber) {
-                System.out.println("You guessed the number!");
+                System.out.printf("You guessed the number in %d guesses!", numberOfTotalGuesses);
                 break;
+            } else if (guess < randomNumber) {
+                System.out.println("Incorrect! The number is more than " + guess);
+            } else if (guess > randomNumber) {
+                System.out.println("Incorrect! The number is less than " + guess);
             } else {
                 numberOfTotalGuesses--;
                 
